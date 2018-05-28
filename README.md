@@ -1,14 +1,18 @@
+
 Git setup:
+
     git clone  https://github.com/keyrock-stack/puppet-node.git puppet-node3
     git remote add keyrock-stack https://github.com/keyrock-stack/puppet-node.git
     Change hostname in Vagrantfile
 
 SSH setup:
+
     vagrant ssh-config > vagrant-ssh
     vagrant-ssh >> ~/.ssh/config
     vi ~/.ssh/config
 
 Install stack user:
+
     sudo useradd -s /bin/bash -d /home/stack -m stack
     echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
     sudo su - stack
