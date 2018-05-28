@@ -1,7 +1,20 @@
-git clone  https://github.com/keyrock-stack/puppet-node.git
-git remote add keyrock-stack https://github.com/keyrock-stack/puppet-node.git
+Git setup
+  git clone  https://github.com/keyrock-stack/puppet-node.git
+  git remote add keyrock-stack https://github.com/keyrock-stack/puppet-node.git
+  Change hostname in Vagrantfile
 
-Change hostname in Vagrantfile
+SSH setup
+ vagrant ssh-config > vagrant-ssh
+ vagrant-ssh >> ~/.ssh/config
+ vi ~/.ssh/config
+
+Install stack user
+
+ sudo useradd -s /bin/bash -d /home/stack -m stack
+ echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
+ sudo su - stack
+ git clone https://github.com/keyrock-stack/devstack.env.git
+
 
 If you're new to Puppet, a great way to try it out quickly is to use a Vagrant virtual machine, which will run on your own computer, and there's a specific [Vagrant image](https://app.vagrantup.com/ubuntu/boxes/xenial64) recommended for use with this book. Follow the instructions below to install Virtualbox and Vagrant, and you'll be able to run the examples in this repo in just a few minutes.
 
