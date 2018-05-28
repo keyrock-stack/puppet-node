@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
   # If you have trouble running the 64-bit Vagrant VM, try this instead:
   # config.vm.box = "ubuntu/xenial32"
   config.vm.box = "ubuntu/xenial64"
+  config.vm.hostname = "yow-lkwan-puppet2"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -24,7 +25,7 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 80, host: 8081
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -33,7 +34,9 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  # config.vm.network "public_network"
+  config.vm.network "public_network", bridge: [
+    "eth0",
+  ]
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -58,6 +61,14 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
 
+  config.vm.provider "virtualbox" do |vb|
+     # Display the VirtualBox GUI when booting the machine
+     #vb.gui = true
+     # Customize the amount of memory on the VM:
+     vb.memory = "12024"
+     vb.cpus = "4"
+     vb.name = "yow-lkwan-puppet2"
+  end
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
   # https://docs.vagrantup.com/v2/push/atlas.html for more information.
