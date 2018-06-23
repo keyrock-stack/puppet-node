@@ -1,8 +1,8 @@
 
 Git setup:
 
-    git clone  https://github.com/keyrock-stack/puppet-node.git puppet-node3
-    git remote add keyrock-stack https://github.com/keyrock-stack/puppet-node.git
+    git clone  https://github.com/keyrock-stack/vagrant-node.git vagrant-node
+    git remote add keyrock-stack https://github.com/keyrock-stack/vagrant-node.git
     Change hostname in Vagrantfile
 
 SSH setup:
