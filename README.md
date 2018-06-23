@@ -8,8 +8,10 @@ Git setup:
 SSH setup:
 
     vagrant ssh-config > vagrant-ssh
-    vagrant-ssh >> ~/.ssh/config
+    #modify vagratn-ssh, e.g. replace Default to a hostname you would like to
+    cat vagrant-ssh >> ~/.ssh/config
     vi ~/.ssh/config
+    #if vagrant ssh or ssh #hostname doesn't work, rm .vagrant directory
 
 Install stack user:
 
