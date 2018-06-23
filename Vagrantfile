@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   # If you have trouble running the 64-bit Vagrant VM, try this instead:
   # config.vm.box = "ubuntu/xenial32"
   config.vm.box = "ubuntu/xenial64"
-  config.vm.hostname = "yow-lkwan-puppet2"
+  config.vm.hostname = "yow-lkwan-devstack1"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
      # Customize the amount of memory on the VM:
      vb.memory = "12024"
      vb.cpus = "4"
-     vb.name = "yow-lkwan-puppet2"
+     vb.name = "yow-lkwan-devstack1"
   end
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
